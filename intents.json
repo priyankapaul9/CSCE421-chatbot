@@ -1,0 +1,53 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "responses": ["Hello, i'm the class chatbot", "Good to see you again im the class chatbot", "Hi there, how can I help you?"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
+         "responses": ["I can give you information about the CSCE 421 class.", "Offering support the CSCE 421 class"],
+         "context": [""]
+        },
+        {"tag": "exam_date",
+        "patterns": ["When is the exam?", "What is the date of the test?", "How much is the test in the final grade?", "List all the exam dates", "When's the test?" ],
+        "responses": ["The exam date is 3/18 and it has a weight of 40%"],
+        "context": [""]
+        },
+        {"tag": "email",
+         "patterns": ["Where can I email my homework?", "Whats the professors email?", "Whats the TA email?", "How can I contact the prof?"],
+         "responses": ["The proffessors email is atlaswang@tamu.edu and the TAs email is wuzhenyu_sjtu@tamu.edu"],
+         "context": [""]
+        },
+        {"tag": "office_hours",
+         "patterns": ["Where can i get more help?", "When are the office hours?", "Office Hours?", "When and where are the office hours?"],
+         "responses": ["The intructor office hours are 2:00 to 3:00 pm every Tuesday and TA Office Hour:  9:00 to 10:00 am every Thursday"],
+         "context": [""]
+        },
+        {"tag": "grade_metrics",
+         "patterns": ["How will grading work?","What is the exam worth?", "What are the homeworks worth?","How much is the project worth?"],
+         "responses": ["Homeworks 5 each, Exam 40 ech and final project is 40"],
+         "context": [""]
+        },
+        {"tag": "hospital",
+         "patterns": [],
+         "responses": ["Loading hospital details"],
+         "context": [""]
+        }
+   ]
+}
