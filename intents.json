@@ -41,13 +41,34 @@
         },
         {"tag": "grade_metrics",
          "patterns": ["How will grading work?","What is the exam worth?", "What are the homeworks worth?","How much is the project worth?"],
-         "responses": ["Homeworks 5 each, Exam 40 ech and final project is 40"],
+         "responses": ["Homeworks 5 each, Exam 40 and final project is 40"],
          "context": [""]
         },
-        {"tag": "hospital",
-         "patterns": [],
-         "responses": ["Loading hospital details"],
+        {"tag": "class_time",
+         "patterns": ["What time is class?", "What day is class?","Where is class held?"],
+         "responses": ["Lecture is 5:45-7:00pm every Monday and Wednesday in HRBB 124"],
          "context": [""]
+        },
+        {"tag": "class_description",
+        "patterns": ["What is this class?","What is the class description?","What is Machine Learning", "What is ML"],
+        "responses": ["Machine learning is a sub-field of Artificial Intelligence that gives computers the ability to learn and/or act without being explicitly programmed. Topics include various supervised, unsupervised and reinforcement learning approaches (including deep learning), optimization procedures, and statistical inference."],
+        "context": [""]
+        },
+        {"tag": "class_goal",
+        "patterns": ["What is the goal of this class?","Is there a goal for this class?"],
+        "responses": ["The goal for this course is for the students will digest and practice their knowledge and skills by class discussion and exams, and obtain in-depth experience with a particular topic through a final project."],
+        "context": [""]
+        },
+        {"tag": "grading_policy",
+        "patterns": ["What is the grading policy of this class?","What is the policy for grades?"],
+        "responses": ["The grading policy is as follows: A = 100-90, B = 89-80, C = 79-70, D = 69-60, F = <60"],
+        "context": [""]
+        },
+        {"tag": "prerequisite",
+        "patterns": ["What are the prerequisites of this class?","What courses do I need to take before this class?", "What previous knowledge do I need?"],
+        "responses": [" Students should have taken the following courses or equivalent: Data Structure and Algorithms (CSCE 221), Linear Algebra (MATH 304 or MATH 323), and Numerical Methods (MATH 417). Coding experiences with Python, Matlab, or C/C++ are assumed.Previous knowledge of machine learning, computer vision signal processing or data mining will be helpful, but not necessary."],
+        "context": [""]
         }
+        
    ]
 }
