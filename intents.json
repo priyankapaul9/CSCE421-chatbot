@@ -68,7 +68,18 @@
         "patterns": ["What are the prerequisites of this class?","What courses do I need to take before this class?", "What previous knowledge do I need?"],
         "responses": [" Students should have taken the following courses or equivalent: Data Structure and Algorithms (CSCE 221), Linear Algebra (MATH 304 or MATH 323), and Numerical Methods (MATH 417). Coding experiences with Python, Matlab, or C/C++ are assumed.Previous knowledge of machine learning, computer vision signal processing or data mining will be helpful, but not necessary."],
         "context": [""]
+        },
+        {"tag": "attendance",
+        "patterns": ["What is the attendance policy?","What is the make up policy?", "Is there a late policy?"],
+        "responses": ["Every student should attend the class, unless you have an accepted excuse. Please check student rule 7 http://student-rules.tamu.edu/rule07 for details."],
+        "context": [""]
+        },
+        {"tag": "academic_integrity",
+        "patterns": ["What is the honor code?","What happens if someone cheats?", "What is academic integrity?"],
+        "responses": ["Aggie Code of Honor: An Aggie does not lie, cheat or steal, or tolerate those who do. see: http://aggiehonor.tamu.edu/"],
+        "context": [""]
         }
+        
         
    ]
 }
