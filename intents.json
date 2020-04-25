@@ -21,27 +21,27 @@
         },
         {"tag": "options",
          "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-         "responses": ["I can give you information about the CSCE 421 class.", "Offering support the CSCE 421 class"],
+         "responses": ["I can give you information about the CSCE 421 class.", "Offering support the CSCE 421 class", "Ask me about the Machine Learning class"],
          "context": [""]
         },
         {"tag": "exam_date",
         "patterns": ["When is the exam?", "What is the date of the test?", "How much is the test in the final grade?", "List all the exam dates", "When's the test?" ],
-        "responses": ["The exam date is 3/18 and it has a weight of 40%"],
+        "responses": ["The exam date is 3/18 and it has a weight of 40%","The exam is on Wednesday 3/18.","There is only one test on March 18"],
         "context": [""]
         },
         {"tag": "email",
          "patterns": ["Where can I email my homework?", "Whats the professors email?", "Whats the TA email?", "How can I contact the prof?"],
-         "responses": ["The proffessors email is atlaswang@tamu.edu and the TAs email is wuzhenyu_sjtu@tamu.edu"],
+         "responses": ["The proffessors email is atlaswang@tamu.edu and the TAs email is wuzhenyu_sjtu@tamu.edu","You can contact the proffessor by email to atlaswang@tamu.edu", "The TAs email is wuzhenyu_sjtu@tamu.edu"],
          "context": [""]
         },
         {"tag": "office_hours",
          "patterns": ["Where can i get more help?", "When are the office hours?", "Office Hours?", "When and where are the office hours?"],
-         "responses": ["The intructor office hours are 2:00 to 3:00 pm every Tuesday and TA Office Hour:  9:00 to 10:00 am every Thursday"],
+         "responses": ["The intructor office hours are 2:00 to 3:00 pm every Tuesday and TA Office Hour:  9:00 to 10:00 am every Thursday","Ooffice hours are 2:00 to 3:00 pm every Tuesday and TA Office Hour:  9:00 to 10:00 am every Thursday"],
          "context": [""]
         },
         {"tag": "grade_metrics",
          "patterns": ["How will grading work?","What is the exam worth?", "What are the homeworks worth?","How much is the project worth?"],
-         "responses": ["Homeworks 5 each, Exam 40 and final project is 40"],
+         "responses": ["Homeworks 5% each, Exam 40% and final project is 40%","The exam is worh 40%, the homework is worth 5% each, and the project is worth 40%"],
          "context": [""]
         },
         {"tag": "class_time",
@@ -76,7 +76,7 @@
         },
         {"tag": "academic_integrity",
         "patterns": ["What is the honor code?","What happens if someone cheats?", "What is academic integrity?"],
-        "responses": ["Aggie Code of Honor: An Aggie does not lie, cheat or steal, or tolerate those who do. see: http://aggiehonor.tamu.edu/"],
+        "responses": ["Aggie Code of Honor: An Aggie does not lie, cheat or steal, or tolerate those who do. see: http://aggiehonor.tamu.edu/","An Aggis does not lie, cheat, or steal nor tolerate does who do.","If you cheat you will get an F"],
         "context": [""]
         }
         
