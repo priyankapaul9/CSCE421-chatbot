@@ -31,7 +31,7 @@
         },
         {"tag": "email",
          "patterns": ["Where can I email my homework?", "Whats the professors email?", "Whats the TA email?", "How can I contact the prof?"],
-         "responses": ["The proffessors email is atlaswang@tamu.edu and the TAs email is wuzhenyu_sjtu@tamu.edu","You can contact the proffessor by email to atlaswang@tamu.edu", "The TAs email is wuzhenyu_sjtu@tamu.edu"],
+         "responses": ["The professors email is atlaswang@tamu.edu and the TAs email is wuzhenyu_sjtu@tamu.edu","You can contact the proffessor by email to atlaswang@tamu.edu", "The TAs email is wuzhenyu_sjtu@tamu.edu"],
          "context": [""]
         },
         {"tag": "office_hours",
@@ -45,22 +45,22 @@
          "context": [""]
         },
         {"tag": "class_time",
-         "patterns": ["What time is class?", "What day is class?","Where is class held?"],
-         "responses": ["Lecture is 5:45-7:00pm every Monday and Wednesday in HRBB 124"],
+         "patterns": ["What time is class?", "What day is class?","Where is class held?","Where do I go for class?"],
+         "responses": ["Lecture is 5:45-7:00pm every Monday and Wednesday in HRBB 124","Class is every Monday and Wednesday at 5:45-7pm in HRBB 124"],
          "context": [""]
         },
         {"tag": "class_description",
         "patterns": ["What is this class?","What is the class description?","What is Machine Learning", "What is ML"],
-        "responses": ["Machine learning is a sub-field of Artificial Intelligence that gives computers the ability to learn and/or act without being explicitly programmed. Topics include various supervised, unsupervised and reinforcement learning approaches (including deep learning), optimization procedures, and statistical inference."],
+        "responses": ["Machine learning is a sub-field of Artificial Intelligence that gives computers the ability to learn and/or act without being explicitly programmed. Topics include various supervised, unsupervised and reinforcement learning approaches (including deep learning), optimization procedures, and statistical inference.","You will learn about Machine Learning in this class"],
         "context": [""]
         },
         {"tag": "class_goal",
-        "patterns": ["What is the goal of this class?","Is there a goal for this class?"],
+        "patterns": ["What is the goal of this class?","Is there a goal for this class?","What can I learn in this class?"],
         "responses": ["The goal for this course is for the students will digest and practice their knowledge and skills by class discussion and exams, and obtain in-depth experience with a particular topic through a final project."],
         "context": [""]
         },
         {"tag": "grading_policy",
-        "patterns": ["What is the grading policy of this class?","What is the policy for grades?"],
+        "patterns": ["What is the grading policy of this class?","What is the policy for grades?","What grade do I need for an A?"],
         "responses": ["The grading policy is as follows: A = 100-90, B = 89-80, C = 79-70, D = 69-60, F = <60"],
         "context": [""]
         },
@@ -70,12 +70,17 @@
         "context": [""]
         },
         {"tag": "attendance",
-        "patterns": ["What is the attendance policy?","What is the make up policy?", "Is there a late policy?"],
-        "responses": ["Every student should attend the class, unless you have an accepted excuse. Please check student rule 7 http://student-rules.tamu.edu/rule07 for details."],
+        "patterns": ["What is the attendance policy?", "Is there a late policy?","Can I miss class?"],
+        "responses": ["Every student should attend the class, unless you have an accepted excuse. Please check student rule 7 http://student-rules.tamu.edu/rule07 for details.","Only univerisity excused absences will count as acceptable absences"],
+        "context": [""]
+        },
+        {"tag": "make_up",
+        "patterns": ["What is the make up policy?","What happens if I miss class?"],
+        "responses": ["If you have missed class, check the course website for what you have missed.","If you do not have a university excused absence, work cannot be made up"],
         "context": [""]
         },
         {"tag": "academic_integrity",
-        "patterns": ["What is the honor code?","What happens if someone cheats?", "What is academic integrity?"],
+        "patterns": ["What is the honor code?","What happens if someone cheats?", "What is academic integrity?","Can I work with others on homework?"],
         "responses": ["Aggie Code of Honor: An Aggie does not lie, cheat or steal, or tolerate those who do. see: http://aggiehonor.tamu.edu/","An Aggis does not lie, cheat, or steal nor tolerate does who do.","If you cheat you will get an F"],
         "context": [""]
         }
