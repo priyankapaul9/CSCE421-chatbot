@@ -30,13 +30,13 @@
         "context": [""]
         },
         {"tag": "email",
-         "patterns": ["Where can I email my homework?", "Whats the professors email?", "Whats the TA email?", "How can I contact the prof?"],
+         "patterns": ["Where can I email my homework?", "Whats the professors email?", "Whats the TA email?", "How can I contact the prof?", "How can I contact the TA?", "How can I make an appointment"],
          "responses": ["The professors email is atlaswang@tamu.edu and the TAs email is wuzhenyu_sjtu@tamu.edu","You can contact the proffessor by email to atlaswang@tamu.edu", "The TAs email is wuzhenyu_sjtu@tamu.edu"],
          "context": [""]
         },
         {"tag": "office_hours",
          "patterns": ["Where can i get more help?", "When are the office hours?", "Office Hours?", "When and where are the office hours?"],
-         "responses": ["The intructor office hours are 2:00 to 3:00 pm every Tuesday and TA Office Hour:  9:00 to 10:00 am every Thursday","Ooffice hours are 2:00 to 3:00 pm every Tuesday and TA Office Hour:  9:00 to 10:00 am every Thursday"],
+         "responses": ["The instructor office hours are 2:00 to 3:00 pm every Tuesday and TA Office Hour:  9:00 to 10:00 am every Thursday","Office hours are 2:00 to 3:00 pm every Tuesday and TA Office Hour:  9:00 to 10:00 am every Thursday"],
          "context": [""]
         },
         {"tag": "grade_metrics",
@@ -50,7 +50,7 @@
          "context": [""]
         },
         {"tag": "class_description",
-        "patterns": ["What is this class?","What is the class description?","What is Machine Learning", "What is ML"],
+        "patterns": ["What is this class?","What is the class description?","What is Machine Learning", "What is ML","What can I expect from this class?"],
         "responses": ["Machine learning is a sub-field of Artificial Intelligence that gives computers the ability to learn and/or act without being explicitly programmed. Topics include various supervised, unsupervised and reinforcement learning approaches (including deep learning), optimization procedures, and statistical inference.","You will learn about Machine Learning in this class"],
         "context": [""]
         },
@@ -81,10 +81,19 @@
         },
         {"tag": "academic_integrity",
         "patterns": ["What is the honor code?","What happens if someone cheats?", "What is academic integrity?","Can I work with others on homework?"],
-        "responses": ["Aggie Code of Honor: An Aggie does not lie, cheat or steal, or tolerate those who do. see: http://aggiehonor.tamu.edu/","An Aggis does not lie, cheat, or steal nor tolerate does who do.","If you cheat you will get an F"],
+        "responses": ["Aggie Code of Honor: An Aggie does not lie, cheat or steal, or tolerate those who do. see: http://aggiehonor.tamu.edu/","Aggies does not lie, cheat, or steal nor tolerate does who do.","If you cheat you will get an F"],
         "context": [""]
-        }
-        
-        
+        },
+        {"tag": "TAMU",
+        "patterns": ["At which university can I take this class?","Which university is this class offered?"],
+        "responses": ["This class is offered at Texas A&M Univerity","You can take this class at Texas A&M University", "This Machine Learning is offered at Texas A&M University"],
+        "context": [""]
+        },
+        {"tag": "success",
+        "patterns": ["How can I do well in this class?","How can I get an A in this class?", "What can I do to do better in this class?","I'm not doing well in this class, so how can I do better?"],
+        "responses": ["Attend all the lectures, complete all assigned work and come to office hours","If you want to do well in this class you should attend all lectures, complete assigned work, and ask questions in class or in office hours", "If you need more help with the material in this class, make an appointment with the professor or TA"],
+        "context": [""]
+        },
+
    ]
 }
