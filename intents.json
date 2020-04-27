@@ -93,7 +93,7 @@
         "patterns": ["How can I do well in this class?","How can I get an A in this class?", "What can I do to do better in this class?","I'm not doing well in this class, so how can I do better?"],
         "responses": ["Attend all the lectures, complete all assigned work and come to office hours","If you want to do well in this class you should attend all lectures, complete assigned work, and ask questions in class or in office hours", "If you need more help with the material in this class, make an appointment with the professor or TA"],
         "context": [""]
-        },
+        }
 
    ]
 }
