@@ -1,3 +1,5 @@
+#import libraries and components for project
+
 import nltk
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -13,16 +15,20 @@ words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
 
-def clean_up_sentence(sentence):
+#sanitize the input
+
+#get rid of punctuations
+#lemmatization
+def cleanSentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     return sentence_words
 
 # return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
 
-def bow(sentence, words, show_details=True):
+def bagWords(sentence, words, show_details=True):
     # tokenize the pattern
-    sentence_words = clean_up_sentence(sentence)
+    sentence_words = cleanSentence(sentence)
     # bag of words - matrix of N words, vocabulary matrix
     bag = [0]*len(words)
     for s in sentence_words:
@@ -34,9 +40,11 @@ def bow(sentence, words, show_details=True):
                     print ("found in bag: %s" % w)
     return(np.array(bag))
 
-def predict_class(sentence, model):
+
+#check which class the question belongs to
+def predictClass(sentence, model):
     # filter out predictions below a threshold
-    p = bow(sentence, words,show_details=False)
+    p = bagWords(sentence, words,show_details=False)
     res = model.predict(np.array([p]))[0]
     ERROR_THRESHOLD = 0.25
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
@@ -47,6 +55,7 @@ def predict_class(sentence, model):
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
     return return_list
 
+#get random response from intents depending on the class
 def getResponse(ints, intents_json):
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']
@@ -56,13 +65,14 @@ def getResponse(ints, intents_json):
             break
     return result
 
-def chatbot_response(msg):
-    ints = predict_class(msg, model)
+def chatbotResponse(msg):
+    ints = predictClass(msg, model)
     res = getResponse(ints, intents)
     return res
 
 
-#Creating GUI with tkinter
+#GUI libraries
+#build GUI for chatbot
 import tkinter
 from tkinter import *
 
@@ -76,7 +86,7 @@ def send():
         ChatLog.insert(END, "You: " + msg + '\n\n')
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
 
-        res = chatbot_response(msg)
+        res = chatbotResponse(msg)
         ChatLog.insert(END, "Bot: " + res + '\n\n')
 
         ChatLog.config(state=DISABLED)

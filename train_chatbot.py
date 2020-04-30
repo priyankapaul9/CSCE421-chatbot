@@ -1,3 +1,11 @@
+#import libraries and components for project
+# chatbot will be trained on the dataset which contains categories (intents), pattern and responses
+#usng neural network (LSTM) to classify which category the user’s message belongs
+#give back random response depending on category
+
+#NEEDS TO BE RUN IN PYTHON 3.6.X FOR LIBRARIES TO WORK
+
+
 import nltk
 nltk.download('punkt')
 nltk.download('wordnet')
@@ -13,10 +21,16 @@ from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import SGD
 import random
 
+
+#store words cand categories
+#4 parsing JSON into python
+
 words=[]
 classes = []
 documents = []
+#no use for signs
 ignore_words = ['?', '!']
+#get intents file for training with predefined patterns and responses.
 data_file = open('intents.json').read()
 intents = json.loads(data_file)
 
@@ -34,6 +48,7 @@ for intent in intents['intents']:
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 
+#clean up words and print
 words = [lemmatizer.lemmatize(w.lower()) for w in words if w not in ignore_words]
 words = sorted(list(set(words)))
 
@@ -76,7 +91,7 @@ train_x = list(training[:,0])
 train_y = list(training[:,1])
 print("Training data created")
 
-
+#Use Keras sequential API to create model
 # Create model - 3 layers. First layer 128 neurons, second layer 64 neurons and 3rd output layer contains number of neurons
 # equal to number of intents to predict output intent with softmax
 model = Sequential()
