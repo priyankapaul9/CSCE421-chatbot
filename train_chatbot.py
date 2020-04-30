@@ -5,6 +5,7 @@ from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
 import pickle
+import matplotlib.pyplot as plt
 
 import numpy as np
 from keras.models import Sequential
@@ -87,10 +88,28 @@ model.add(Dense(len(train_y[0]), activation='softmax'))
 
 # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy', 'mse'])
+
 
 #fitting and saving the model
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save('chatbot_model.h5', hist)
+history = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+
+plt.figure(0)
+plt.plot(history.history['accuracy'])
+plt.ylabel("Accuracy")
+plt.xlabel("Epochs")
+plt.savefig("accuracy.png")
+plt.figure(1)
+plt.plot(history.history['mse'])
+plt.ylabel("MSE")
+plt.xlabel("Epochs")
+plt.savefig("MSE.png")
+
+# # evaluate model
+# lo,acc = model.evaluate(np.array(train_x),np.array(train_y))
+# print('Accuracy: %.2f' % (acc*100))
+# print('Loss: %.2f' % (lo*100))
+
+model.save('chatbot_model.h5', history)
 
 print("model created")
