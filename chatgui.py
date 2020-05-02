@@ -14,27 +14,32 @@ intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
+#GUI libraries
+#build GUI for chatbot
+import tkinter
+from tkinter import *
+
 
 #sanitize the input
 
 #get rid of punctuations
 #lemmatization
 def cleanSentence(sentence):
-    sentence_words = nltk.word_tokenize(sentence)
-    sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
-    return sentence_words
+    sentenceWords = nltk.word_tokenize(sentence)
+    sentenceWords = [lemmatizer.lemmatize(word.lower()) for word in sentenceWords]
+    return sentenceWords
 
 # return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
 
 def bagWords(sentence, words, show_details=True):
     # tokenize the pattern
-    sentence_words = cleanSentence(sentence)
+    sentenceWords = cleanSentence(sentence)
     # bag of words - matrix of N words, vocabulary matrix
     bag = [0]*len(words)
-    for s in sentence_words:
+    for s in sentenceWords:
         for i,w in enumerate(words):
             if w == s:
-                # assign 1 if current word is in the vocabulary position
+                # assign 1 if current word is in the same sentence pos
                 bag[i] = 1
                 if show_details:
                     print ("found in bag: %s" % w)
@@ -50,16 +55,16 @@ def predictClass(sentence, model):
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
     # sort by strength of probability
     results.sort(key=lambda x: x[1], reverse=True)
-    return_list = []
+    returnList = []
     for r in results:
-        return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
-    return return_list
+        returnList.append({"intent": classes[r[0]], "probability": str(r[1])})
+    return returnList
 
 #get random response from intents depending on the class
 def getResponse(ints, intents_json):
     tag = ints[0]['intent']
-    list_of_intents = intents_json['intents']
-    for i in list_of_intents:
+    intentsList = intents_json['intents']
+    for i in intentsList:
         if(i['tag']== tag):
             result = random.choice(i['responses'])
             break
@@ -69,13 +74,6 @@ def chatbotResponse(msg):
     ints = predictClass(msg, model)
     res = getResponse(ints, intents)
     return res
-
-
-#GUI libraries
-#build GUI for chatbot
-import tkinter
-from tkinter import *
-
 
 def send():
     msg = EntryBox.get("1.0",'end-1c').strip()
@@ -104,7 +102,7 @@ ChatLog = Text(base, bd=0, bg="white", height="8", width="50", font="Arial",)
 ChatLog.config(state=DISABLED)
 
 #Bind scrollbar to Chat window
-scrollbar = Scrollbar(base, command=ChatLog.yview, cursor="heart")
+scrollbar = Scrollbar(base, command=ChatLog.yview)
 ChatLog['yscrollcommand'] = scrollbar.set
 
 #Create Button to send message
